@@ -5,16 +5,16 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Farm Calculators Kenya | Yield, Cost and Profit Tools</title>
+    <title>Farm Calculators Kenya | Yield, Cost, Profit & Planning Tools</title>
 
     <meta
         name="description"
-        content="Use Kenya Farm Guide calculators to estimate crop yield per acre, farm production costs, expected revenue, profit and cost per acre."
+        content="Use Kenya Farm Guide calculators to estimate crop yield, farm production costs, revenue, profit, cost per acre, break-even price, seed requirements and fertilizer requirements."
     >
 
     <meta
         name="keywords"
-        content="farm calculator Kenya, maize yield calculator, farming cost calculator, farm profit calculator, cost per acre Kenya"
+        content="farm calculator Kenya, maize yield calculator, farm cost calculator, farm profit calculator, break even calculator Kenya, seed rate calculator, fertilizer calculator"
     >
 
     <meta
@@ -43,21 +43,12 @@
         <nav class="main-nav">
 
             <a href="index.html">Home</a>
-
             <a href="maize.html">Maize</a>
-
             <a href="crops.html">Crops</a>
-
             <a href="farm-costs.html">Farm Costs</a>
-
             <a href="technology.html">Technology</a>
-
-            <a href="calculators.html" class="active">
-                Calculators
-            </a>
-
+            <a href="calculators.html" class="active">Calculators</a>
             <a href="about.html">About</a>
-
             <a href="contact.html">Contact</a>
 
         </nav>
@@ -76,9 +67,8 @@
         <h1>Farm Calculators for Kenyan Farmers</h1>
 
         <p>
-            Use these simple tools to estimate crop yield,
-            production costs, expected revenue, profit and
-            cost per acre.
+            Simple tools for estimating yield, production costs,
+            revenue, profit and other farm planning figures.
         </p>
 
     </div>
@@ -95,9 +85,9 @@
             <h2>Practical Farm Planning Tools</h2>
 
             <p>
-                Enter your own farm figures to get quick estimates.
-                These calculators are designed to support farm
-                planning and record keeping.
+                Enter your own farm figures to generate quick estimates.
+                The tools are designed to support planning, budgeting,
+                record keeping and farm decision-making.
             </p>
 
         </div>
@@ -109,11 +99,10 @@
 
         <div class="calculator-card" id="yield-calculator">
 
-            <h2>Crop Yield Calculator</h2>
+            <h2>🌽 Crop Yield Calculator</h2>
 
             <p>
-                Estimate your crop yield per acre from the total
-                harvested grain and cultivated area.
+                Estimate how much crop you harvested per acre.
             </p>
 
             <form id="yieldForm">
@@ -154,9 +143,21 @@
                 </div>
 
 
-                <button type="submit" class="btn">
-                    Calculate Yield
-                </button>
+                <div class="calculator-actions">
+
+                    <button type="submit" class="btn">
+                        Calculate Yield
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="clearYield"
+                    >
+                        Clear
+                    </button>
+
+                </div>
 
             </form>
 
@@ -176,11 +177,11 @@
 
         <div class="calculator-card" id="cost-calculator">
 
-            <h2>Farm Production Cost Calculator</h2>
+            <h2>💰 Farm Production Cost Calculator</h2>
 
             <p>
-                Add your major production expenses to estimate
-                the total cost of your farming operation.
+                Add your major farm expenses to estimate total
+                production cost.
             </p>
 
             <form id="costForm">
@@ -257,9 +258,21 @@
                 </div>
 
 
-                <button type="submit" class="btn">
-                    Calculate Total Cost
-                </button>
+                <div class="calculator-actions">
+
+                    <button type="submit" class="btn">
+                        Calculate Total Cost
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="clearCost"
+                    >
+                        Clear
+                    </button>
+
+                </div>
 
             </form>
 
@@ -279,7 +292,7 @@
 
         <div class="calculator-card" id="profit-calculator">
 
-            <h2>Revenue and Profit Calculator</h2>
+            <h2>📈 Revenue & Profit Calculator</h2>
 
             <p>
                 Estimate expected revenue and the amount remaining
@@ -342,9 +355,21 @@
                 </div>
 
 
-                <button type="submit" class="btn">
-                    Calculate Revenue & Profit
-                </button>
+                <div class="calculator-actions">
+
+                    <button type="submit" class="btn">
+                        Calculate Revenue & Profit
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="clearProfit"
+                    >
+                        Clear
+                    </button>
+
+                </div>
 
             </form>
 
@@ -364,11 +389,10 @@
 
         <div class="calculator-card" id="cost-per-acre">
 
-            <h2>Cost Per Acre Calculator</h2>
+            <h2>🌱 Cost Per Acre Calculator</h2>
 
             <p>
-                Estimate how much you are spending for each acre
-                based on your total farm costs and cultivated area.
+                Estimate your average production cost for each acre.
             </p>
 
             <form id="costPerAcreForm">
@@ -409,9 +433,21 @@
                 </div>
 
 
-                <button type="submit" class="btn">
-                    Calculate Cost Per Acre
-                </button>
+                <div class="calculator-actions">
+
+                    <button type="submit" class="btn">
+                        Calculate Cost Per Acre
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="clearCostPerAcre"
+                    >
+                        Clear
+                    </button>
+
+                </div>
 
             </form>
 
@@ -426,17 +462,254 @@
 
 
         <!-- ========================================= -->
+        <!-- BREAK EVEN PRICE -->
+        <!-- ========================================= -->
+
+        <div class="calculator-card" id="break-even">
+
+            <h2>⚖️ Break-Even Price Calculator</h2>
+
+            <p>
+                Estimate the minimum selling price per kilogram
+                needed to recover your production costs.
+            </p>
+
+            <form id="breakEvenForm">
+
+                <div class="form-group">
+
+                    <label for="breakEvenCost">
+                        Total production cost (KES)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="breakEvenCost"
+                        min="0"
+                        step="0.01"
+                        placeholder="Example: 30000"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="breakEvenQuantity">
+                        Expected production (kg)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="breakEvenQuantity"
+                        min="0"
+                        step="0.01"
+                        placeholder="Example: 1000"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="calculator-actions">
+
+                    <button type="submit" class="btn">
+                        Calculate Break-Even Price
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="clearBreakEven"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <div
+                id="breakEvenResult"
+                class="calculator-result"
+                aria-live="polite"
+            ></div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- SEED RATE CALCULATOR -->
+        <!-- ========================================= -->
+
+        <div class="calculator-card" id="seed-calculator">
+
+            <h2>🌾 Seed Requirement Calculator</h2>
+
+            <p>
+                Estimate the amount of seed required for a given
+                cultivated area using a chosen seed rate.
+            </p>
+
+            <form id="seedForm">
+
+                <div class="form-group">
+
+                    <label for="seedArea">
+                        Farm area (acres)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="seedArea"
+                        min="0"
+                        step="0.01"
+                        placeholder="Example: 5"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="seedRate">
+                        Seed rate (kg per acre)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="seedRate"
+                        min="0"
+                        step="0.01"
+                        placeholder="Example: 10"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="calculator-actions">
+
+                    <button type="submit" class="btn">
+                        Calculate Seed Requirement
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="clearSeed"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <div
+                id="seedResult"
+                class="calculator-result"
+                aria-live="polite"
+            ></div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- FERTILIZER CALCULATOR -->
+        <!-- ========================================= -->
+
+        <div class="calculator-card" id="fertilizer-calculator">
+
+            <h2>🧪 Fertilizer Requirement Calculator</h2>
+
+            <p>
+                Estimate fertilizer quantity from your cultivated
+                area and chosen application rate.
+            </p>
+
+            <form id="fertilizerForm">
+
+                <div class="form-group">
+
+                    <label for="fertilizerArea">
+                        Farm area (acres)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="fertilizerArea"
+                        min="0"
+                        step="0.01"
+                        placeholder="Example: 5"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="fertilizerRate">
+                        Fertilizer rate (kg per acre)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="fertilizerRate"
+                        min="0"
+                        step="0.01"
+                        placeholder="Example: 50"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="calculator-actions">
+
+                    <button type="submit" class="btn">
+                        Calculate Fertilizer Requirement
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="clearFertilizer"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <div
+                id="fertilizerResult"
+                class="calculator-result"
+                aria-live="polite"
+            ></div>
+
+        </div>
+
+
+        <!-- ========================================= -->
         <!-- HOW TO USE -->
         <!-- ========================================= -->
 
         <div class="info-section">
 
-            <h2>How to Use the Calculators</h2>
+            <h2>How to Use These Calculators</h2>
 
             <ol>
 
                 <li>
-                    Enter the figures from your farm records.
+                    Enter figures from your farm records or planning estimates.
                 </li>
 
                 <li>
@@ -448,17 +721,17 @@
                 </li>
 
                 <li>
-                    Use the result as an estimate for farm planning.
+                    Review the result and use it as part of your farm planning.
                 </li>
 
             </ol>
 
             <p>
                 <strong>Important:</strong>
-                These tools provide estimates based on the information
-                entered. Actual farm results can vary because of
-                weather, input prices, crop performance, market prices
-                and other farming conditions.
+                These calculators provide estimates based on the figures
+                entered. Actual results can vary depending on weather,
+                soil conditions, crop performance, input prices,
+                market prices and other farming conditions.
             </p>
 
         </div>
@@ -490,7 +763,6 @@
 </footer>
 
 
-<!-- IMPORTANT: JavaScript must load after the page content -->
 <script src="js/calculators.js"></script>
 
 </body>
