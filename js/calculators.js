@@ -1,99 +1,197 @@
-function numberValue(id) {
-    return parseFloat(document.getElementById(id).value) || 0;
-}
+// =========================================
+// KENYA FARM GUIDE
+// FARM CALCULATORS
+// =========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    console.log("Kenya Farm Guide calculators loaded successfully.");
 
 
-function money(value) {
-    return "KSh " + value.toLocaleString("en-KE", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
-}
+    // =========================================
+    // YIELD CALCULATOR
+    // =========================================
 
+    const yieldForm = document.getElementById("yieldForm");
 
-/* =========================
-   MAIZE YIELD CALCULATOR
-========================= */
+    if (yieldForm) {
 
-function calculateYield() {
+        yieldForm.addEventListener("submit", function (event) {
 
-    const kg = numberValue("yieldKg");
-    const area = numberValue("yieldArea");
-    const output = document.getElementById("yieldResult");
+            event.preventDefault();
 
-    if (kg <= 0 || area <= 0) {
-        output.textContent = "Please enter values greater than zero.";
-        return;
+            const grainInput = document.getElementById("grain");
+            const areaInput = document.getElementById("area");
+            const result = document.getElementById("yieldResult");
+
+            const grain = parseFloat(grainInput.value);
+            const area = parseFloat(areaInput.value);
+
+            if (grain <= 0 || area <= 0) {
+
+                result.textContent =
+                    "Please enter valid grain and area values.";
+
+                return;
+            }
+
+            const yieldPerAcre = grain / area;
+
+            result.innerHTML =
+                "<strong>Estimated yield:</strong> " +
+                yieldPerAcre.toLocaleString("en-KE", {
+                    maximumFractionDigits: 2
+                }) +
+                " kg per acre";
+        });
     }
 
-    const yieldPerAcre = kg / area;
 
-    output.textContent =
-        "Estimated yield: " +
-        yieldPerAcre.toLocaleString("en-KE", {
-            maximumFractionDigits: 2
-        }) +
-        " kg per acre.";
-}
+    // =========================================
+    // FARM COST CALCULATOR
+    // =========================================
 
+    const costForm = document.getElementById("costForm");
 
-/* =========================
-   FARM COST CALCULATOR
-========================= */
+    if (costForm) {
 
-function calculateCost() {
+        costForm.addEventListener("submit", function (event) {
 
-    const seed = numberValue("seedCost");
-    const fertilizer = numberValue("fertCost");
-    const labour = numberValue("labourCost");
-    const other = numberValue("otherCost");
+            event.preventDefault();
 
-    const total = seed + fertilizer + labour + other;
+            const seedCost =
+                parseFloat(document.getElementById("seedCost").value) || 0;
 
-    document.getElementById("costResult").textContent =
-        "Estimated total cost: " + money(total);
-}
+            const fertilizerCost =
+                parseFloat(document.getElementById("fertilizerCost").value) || 0;
 
+            const labourCost =
+                parseFloat(document.getElementById("labourCost").value) || 0;
 
-/* =========================
-   FARM PROFIT CALCULATOR
-========================= */
+            const otherCost =
+                parseFloat(document.getElementById("otherCost").value) || 0;
 
-function calculateProfit() {
+            const totalCost =
+                seedCost +
+                fertilizerCost +
+                labourCost +
+                otherCost;
 
-    const production = numberValue("profitKg");
-    const price = numberValue("profitPrice");
-    const costs = numberValue("profitCosts");
-
-    const revenue = production * price;
-    const profit = revenue - costs;
-
-    document.getElementById("profitResult").textContent =
-        "Estimated revenue: " +
-        money(revenue) +
-        " | Estimated profit: " +
-        money(profit);
-}
-
-
-/* =========================
-   COST PER ACRE CALCULATOR
-========================= */
-
-function calculateAcreCost() {
-
-    const totalCost = numberValue("acreCost");
-    const area = numberValue("acreArea");
-    const output = document.getElementById("acreResult");
-
-    if (totalCost <= 0 || area <= 0) {
-        output.textContent = "Please enter values greater than zero.";
-        return;
+            document.getElementById("costResult").innerHTML =
+                "<strong>Total production cost:</strong> KES " +
+                totalCost.toLocaleString("en-KE", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
+        });
     }
 
-    const costPerAcre = totalCost / area;
 
-    output.textContent =
-        "Estimated cost per acre: " +
-        money(costPerAcre);
-}
+    // =========================================
+    // PROFIT CALCULATOR
+    // =========================================
+
+    const profitForm = document.getElementById("profitForm");
+
+    if (profitForm) {
+
+        profitForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const quantity =
+                parseFloat(document.getElementById("quantity").value);
+
+            const price =
+                parseFloat(document.getElementById("price").value);
+
+            const totalCost =
+                parseFloat(document.getElementById("totalCost").value);
+
+            const result =
+                document.getElementById("profitResult");
+
+            if (
+                !Number.isFinite(quantity) ||
+                !Number.isFinite(price) ||
+                !Number.isFinite(totalCost)
+            ) {
+
+                result.textContent =
+                    "Please enter valid values in all fields.";
+
+                return;
+            }
+
+            const revenue = quantity * price;
+
+            const profit = revenue - totalCost;
+
+            result.innerHTML =
+                "<strong>Expected revenue:</strong> KES " +
+                revenue.toLocaleString("en-KE", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                }) +
+                "<br><br>" +
+
+                "<strong>Estimated result after costs:</strong> KES " +
+                profit.toLocaleString("en-KE", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
+        });
+    }
+
+
+    // =========================================
+    // COST PER ACRE CALCULATOR
+    // =========================================
+
+    const costPerAcreForm =
+        document.getElementById("costPerAcreForm");
+
+    if (costPerAcreForm) {
+
+        costPerAcreForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const totalFarmCost =
+                parseFloat(
+                    document.getElementById("totalFarmCost").value
+                );
+
+            const farmArea =
+                parseFloat(
+                    document.getElementById("farmArea").value
+                );
+
+            const result =
+                document.getElementById("costPerAcreResult");
+
+            if (
+                !Number.isFinite(totalFarmCost) ||
+                !Number.isFinite(farmArea) ||
+                farmArea <= 0
+            ) {
+
+                result.textContent =
+                    "Please enter valid farm cost and area values.";
+
+                return;
+            }
+
+            const costPerAcre =
+                totalFarmCost / farmArea;
+
+            result.innerHTML =
+                "<strong>Estimated cost per acre:</strong> KES " +
+                costPerAcre.toLocaleString("en-KE", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
+        });
+    }
+
+});
