@@ -4,47 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Farm Calculators Kenya | Yield, Cost & Profit Calculators</title>
+    <title>Farm Calculators Kenya | Yield, Cost and Profit Tools</title>
 
-    <meta
-        name="description"
-        content="Use simple farm calculators for Kenya to estimate maize yield per acre, farm production costs, revenue, profit and cost per acre."
-    >
+    <meta name="description"
+          content="Use Kenya Farm Guide's simple farm calculators to estimate crop yield per acre, production costs, cost per acre, expected revenue and potential farm profit.">
 
-    <meta
-        name="keywords"
-        content="farm calculator Kenya, maize yield calculator, yield per acre calculator, farm cost calculator, farm profit calculator, cost per acre calculator"
-    >
+    <meta name="keywords"
+          content="farm calculator Kenya, crop yield calculator, farm cost calculator, profit calculator, cost per acre calculator, agriculture calculator Kenya">
 
-    <meta name="author" content="Ibrahim Nyangino">
+    <link rel="canonical"
+          href="https://kenya-farm-guide-production.up.railway.app/calculators.html">
 
-    <meta name="robots" content="index, follow">
+    <meta property="og:title"
+          content="Farm Calculators Kenya | Yield, Cost and Profit Tools">
 
-    <link
-        rel="canonical"
-        href="https://kenya-farm-guide-production.up.railway.app/calculators.html"
-    >
-
-    <!-- Open Graph / social sharing -->
+    <meta property="og:description"
+          content="Simple calculators for estimating farm yield, production costs, cost per acre, revenue and potential profit.">
 
     <meta property="og:type" content="website">
 
-    <meta
-        property="og:title"
-        content="Farm Calculators Kenya | Yield, Cost & Profit Calculators"
-    >
+    <meta property="og:url"
+          content="https://kenya-farm-guide-production.up.railway.app/calculators.html">
 
-    <meta
-        property="og:description"
-        content="Use simple digital tools to estimate farm yield, production costs, revenue, profit and cost per acre."
-    >
-
-    <meta
-        property="og:url"
-        content="https://kenya-farm-guide-production.up.railway.app/calculators.html"
-    >
-
-    <meta property="og:site_name" content="Kenya Farm Guide">
+    <meta name="google-site-verification"
+          content="S0d-MW8vO9WhX4BiGtNLldSvwFTm5F3F3QDxsUMRstM">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -54,7 +37,7 @@
 <header>
     <div class="container">
 
-        <h1>🌽 Kenya Farm Guide</h1>
+        <h1>Kenya Farm Guide</h1>
 
         <nav>
             <a href="index.html">Home</a>
@@ -63,128 +46,131 @@
             <a href="farm-costs.html">Farm Costs</a>
             <a href="technology.html">Technology</a>
             <a href="calculators.html">Calculators</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
         </nav>
 
     </div>
 </header>
 
-
 <main>
 
-    <!-- INTRODUCTION -->
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="container">
 
-    <section class="section">
+            <p class="eyebrow">Digital Farm Tools</p>
 
-        <div class="container content-narrow">
-
-            <p class="eyebrow">
-                FARM PLANNING TOOLS
-            </p>
-
-            <h2>
-                Simple Farm Calculators
-            </h2>
+            <h2>Farm Calculators</h2>
 
             <p>
-                These simple tools can help farmers estimate crop yield,
-                production costs, revenue, profit and cost per acre.
-            </p>
-
-            <p>
-                Enter your own farm information to produce an estimate. The
-                results are intended for planning and educational purposes and
-                should be interpreted using current local prices and actual
-                farm records.
+                Use these simple tools to work with farm production
+                figures, estimate costs and understand potential
+                revenue and profit. Enter your own figures to get
+                an instant calculation.
             </p>
 
         </div>
-
     </section>
 
 
-    <!-- CALCULATORS -->
-
-    <section class="section section-light">
-
+    <!-- INTRODUCTION -->
+    <section>
         <div class="container">
 
-            <div class="section-heading">
+            <h2>Plan Your Farm Using Numbers</h2>
 
-                <p class="eyebrow">
-                    DIGITAL FARM TOOLS
+            <p>
+                Good farm planning starts with understanding the numbers
+                behind production. Seed, fertilizer, labour, land size,
+                expected harvest and selling price can all affect the
+                financial outcome of a farming activity.
+            </p>
+
+            <p>
+                The calculators below provide simple estimates that can
+                help with planning. They are not a substitute for local
+                market prices, soil testing, professional agricultural
+                advice or actual farm records.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- YIELD CALCULATOR -->
+    <section id="yield-calculator">
+        <div class="container">
+
+            <div class="card">
+
+                <p class="eyebrow">Tool 1</p>
+
+                <h2>Crop Yield Calculator</h2>
+
+                <p>
+                    Estimate production per acre using the total grain
+                    harvested and the area cultivated.
                 </p>
 
-                <h2>
-                    Calculate and Compare Farm Information
-                </h2>
-
-            </div>
-
-
-            <div class="card-grid">
-
-                <!-- YIELD CALCULATOR -->
-
-                <article class="card calculator-card">
-
-                    <h3>
-                        🌽 Maize Yield per Acre
-                    </h3>
-
-                    <p>
-                        Estimate yield per acre from harvested grain and the
-                        area harvested.
-                    </p>
+                <form onsubmit="calculateYield(); return false;">
 
                     <label for="grain">
-                        Harvested grain (kg)
+                        Total grain harvested (kg)
                     </label>
 
                     <input
                         type="number"
                         id="grain"
-                        placeholder="e.g. 1200"
                         min="0"
-                        step="any"
+                        step="0.01"
+                        placeholder="Example: 2400"
+                        required
                     >
 
                     <label for="area">
-                        Area harvested (acres)
+                        Total cultivated area (acres)
                     </label>
 
                     <input
                         type="number"
                         id="area"
-                        placeholder="e.g. 1"
-                        min="0"
-                        step="any"
+                        min="0.01"
+                        step="0.01"
+                        placeholder="Example: 2"
+                        required
                     >
 
-                    <button
-                        class="button"
-                        type="button"
-                        onclick="calculateYield()"
-                    >
+                    <button class="btn" type="submit">
                         Calculate Yield
                     </button>
 
-                    <p id="yieldResult"></p>
+                    <div id="yieldResult"></div>
 
-                </article>
+                </form>
+
+            </div>
+
+        </div>
+    </section>
 
 
-                <!-- COST CALCULATOR -->
+    <!-- COST CALCULATOR -->
+    <section id="cost-calculator">
+        <div class="container">
 
-                <article class="card calculator-card">
+            <div class="card">
 
-                    <h3>
-                        💰 Total Farm Cost
-                    </h3>
+                <p class="eyebrow">Tool 2</p>
 
-                    <p>
-                        Add major farm expenses to estimate total production
-                        cost.
-                    </p>
+                <h2>Farm Production Cost Calculator</h2>
+
+                <p>
+                    Add your main production expenses to estimate the
+                    total cost of running the farm activity.
+                </p>
+
+                <form onsubmit="calculateCost(); return false;">
 
                     <label for="seedCost">
                         Seed cost (KSh)
@@ -193,21 +179,21 @@
                     <input
                         type="number"
                         id="seedCost"
-                        placeholder="e.g. 2500"
                         min="0"
-                        step="any"
+                        step="0.01"
+                        placeholder="Example: 5000"
                     >
 
                     <label for="fertilizerCost">
-                        Fertilizer cost (KSh)
+                        Fertilizer and manure cost (KSh)
                     </label>
 
                     <input
                         type="number"
                         id="fertilizerCost"
-                        placeholder="e.g. 5000"
                         min="0"
-                        step="any"
+                        step="0.01"
+                        placeholder="Example: 12000"
                     >
 
                     <label for="labourCost">
@@ -217,9 +203,9 @@
                     <input
                         type="number"
                         id="labourCost"
-                        placeholder="e.g. 4000"
                         min="0"
-                        step="any"
+                        step="0.01"
+                        placeholder="Example: 8000"
                     >
 
                     <label for="otherCost">
@@ -229,59 +215,67 @@
                     <input
                         type="number"
                         id="otherCost"
-                        placeholder="e.g. 3000"
                         min="0"
-                        step="any"
+                        step="0.01"
+                        placeholder="Example: 3000"
                     >
 
-                    <button
-                        class="button"
-                        type="button"
-                        onclick="calculateCost()"
-                    >
-                        Calculate Cost
+                    <button class="btn" type="submit">
+                        Calculate Total Cost
                     </button>
 
-                    <p id="costResult"></p>
+                    <div id="costResult"></div>
 
-                </article>
+                </form>
+
+            </div>
+
+        </div>
+    </section>
 
 
-                <!-- PROFIT CALCULATOR -->
+    <!-- PROFIT CALCULATOR -->
+    <section id="profit-calculator">
+        <div class="container">
 
-                <article class="card calculator-card">
+            <div class="card">
 
-                    <h3>
-                        📈 Farm Profit
-                    </h3>
+                <p class="eyebrow">Tool 3</p>
 
-                    <p>
-                        Estimate revenue and profit using production,
-                        selling price and total costs.
-                    </p>
+                <h2>Farm Revenue and Profit Calculator</h2>
+
+                <p>
+                    Estimate expected revenue and potential profit from
+                    a crop using production quantity, selling price and
+                    total production cost.
+                </p>
+
+                <form onsubmit="calculateProfit(); return false;">
 
                     <label for="quantity">
-                        Quantity sold (kg)
+                        Expected production (kg)
                     </label>
 
                     <input
                         type="number"
                         id="quantity"
-                        placeholder="e.g. 1200"
                         min="0"
-                        step="any"
+                        step="0.01"
+                        placeholder="Example: 2500"
+                        required
                     >
 
                     <label for="price">
-                        Selling price per kg (KSh)
+                        Expected selling price per kg (KSh)
                     </label>
 
                     <input
                         type="number"
                         id="price"
-                        placeholder="e.g. 50"
                         min="0"
-                        step="any"
+                        step="0.01"
+                        placeholder="Example: 45"
+                        required
                     >
 
                     <label for="totalCost">
@@ -291,36 +285,42 @@
                     <input
                         type="number"
                         id="totalCost"
-                        placeholder="e.g. 20000"
                         min="0"
-                        step="any"
+                        step="0.01"
+                        placeholder="Example: 60000"
+                        required
                     >
 
-                    <button
-                        class="button"
-                        type="button"
-                        onclick="calculateProfit()"
-                    >
-                        Calculate Profit
+                    <button class="btn" type="submit">
+                        Calculate Revenue and Profit
                     </button>
 
-                    <p id="profitResult"></p>
+                    <div id="profitResult"></div>
 
-                </article>
+                </form>
+
+            </div>
+
+        </div>
+    </section>
 
 
-                <!-- COST PER ACRE -->
+    <!-- COST PER ACRE -->
+    <section id="cost-per-acre">
+        <div class="container">
 
-                <article class="card calculator-card">
+            <div class="card">
 
-                    <h3>
-                        📊 Cost per Acre
-                    </h3>
+                <p class="eyebrow">Tool 4</p>
 
-                    <p>
-                        Estimate the average production cost for each acre
-                        cultivated.
-                    </p>
+                <h2>Cost Per Acre Calculator</h2>
+
+                <p>
+                    Estimate your average production cost per acre using
+                    your total farm expenses and cultivated area.
+                </p>
+
+                <form onsubmit="calculateCostPerAcre(); return false;">
 
                     <label for="totalFarmCost">
                         Total farm cost (KSh)
@@ -329,264 +329,174 @@
                     <input
                         type="number"
                         id="totalFarmCost"
-                        placeholder="e.g. 30000"
                         min="0"
-                        step="any"
+                        step="0.01"
+                        placeholder="Example: 75000"
+                        required
                     >
 
                     <label for="farmArea">
-                        Farm area (acres)
+                        Cultivated area (acres)
                     </label>
 
                     <input
                         type="number"
                         id="farmArea"
-                        placeholder="e.g. 2"
-                        min="0"
-                        step="any"
+                        min="0.01"
+                        step="0.01"
+                        placeholder="Example: 3"
+                        required
                     >
 
-                    <button
-                        class="button"
-                        type="button"
-                        onclick="calculateCostPerAcre()"
-                    >
-                        Calculate Cost per Acre
+                    <button class="btn" type="submit">
+                        Calculate Cost Per Acre
                     </button>
 
-                    <p id="costPerAcreResult"></p>
+                    <div id="costPerAcreResult"></div>
 
-                </article>
+                </form>
 
             </div>
 
         </div>
-
     </section>
 
 
     <!-- HOW TO USE -->
-
-    <section class="section">
-
+    <section>
         <div class="container">
 
-            <div class="section-heading">
+            <h2>How to Use the Calculators</h2>
 
-                <p class="eyebrow">
-                    HOW IT WORKS
-                </p>
-
-                <h2>
-                    Using the Farm Calculators
-                </h2>
-
-            </div>
-
-
-            <div class="card-grid">
+            <div class="content-grid">
 
                 <article class="card">
-
-                    <h3>1. Enter Your Information</h3>
+                    <h3>1. Use Your Own Figures</h3>
 
                     <p>
-                        Use actual figures from your farm records whenever
-                        possible.
+                        Where possible, use figures from your farm
+                        records instead of general estimates.
                     </p>
-
                 </article>
 
-
                 <article class="card">
-
-                    <h3>2. Check the Result</h3>
+                    <h3>2. Check Your Units</h3>
 
                     <p>
-                        The calculator will perform the basic calculation and
-                        display an estimated result.
+                        Enter production in kilograms, land in acres
+                        and monetary values in Kenyan shillings.
                     </p>
-
                 </article>
 
-
                 <article class="card">
-
-                    <h3>3. Compare Your Records</h3>
+                    <h3>3. Compare Different Scenarios</h3>
 
                     <p>
-                        Use the result together with your farm records,
-                        production conditions and current market information.
+                        You can change the selling price, production
+                        or costs to see how different assumptions
+                        affect your results.
                     </p>
+                </article>
 
+                <article class="card">
+                    <h3>4. Keep Farm Records</h3>
+
+                    <p>
+                        Compare your estimates with actual results
+                        after harvest so that your future planning
+                        becomes more accurate.
+                    </p>
                 </article>
 
             </div>
 
         </div>
-
     </section>
 
 
-    <!-- FORMULAS -->
+    <!-- EXAMPLE -->
+    <section>
+        <div class="container">
 
-    <section class="section section-light">
-
-        <div class="container content-narrow">
-
-            <p class="eyebrow">
-                CALCULATION METHODS
-            </p>
-
-            <h2>
-                What the Calculators Measure
-            </h2>
-
-            <h3>
-                Yield per Acre
-            </h3>
+            <h2>Example Farm Calculation</h2>
 
             <p>
-                Harvested grain ÷ Area harvested = Yield per acre.
+                Suppose a farmer harvests 2,400 kg of maize from
+                2 acres. The estimated yield is:
             </p>
 
-            <h3>
-                Total Farm Cost
-            </h3>
+            <div class="card">
+                <p>
+                    <strong>2,400 kg ÷ 2 acres = 1,200 kg per acre</strong>
+                </p>
+            </div>
 
             <p>
-                Seed + fertilizer + labour + other production expenses =
-                estimated total cost.
-            </p>
-
-            <h3>
-                Revenue
-            </h3>
-
-            <p>
-                Quantity sold × Selling price per kilogram = Estimated
-                revenue.
-            </p>
-
-            <h3>
-                Profit
-            </h3>
-
-            <p>
-                Estimated revenue − Total production cost = Estimated profit.
-            </p>
-
-            <h3>
-                Cost per Acre
-            </h3>
-
-            <p>
-                Total farm cost ÷ Farm area = Estimated cost per acre.
+                The same farmer can then estimate production costs,
+                expected revenue and potential profit using the other
+                calculators.
             </p>
 
         </div>
-
     </section>
 
 
     <!-- IMPORTANT NOTE -->
+    <section>
+        <div class="container">
 
-    <section class="section">
+            <div class="card">
 
-        <div class="container content-narrow">
+                <h2>Important Note</h2>
 
-            <h2>
-                Important Note About Estimates
-            </h2>
+                <p>
+                    Calculator results are estimates based entirely
+                    on the figures entered by the user. Actual farm
+                    results can differ because of weather, soil
+                    conditions, crop variety, pests, diseases,
+                    management practices, labour costs, input prices
+                    and market conditions.
+                </p>
 
-            <p>
-                These calculators perform simple mathematical calculations.
-                They do not predict future prices, crop yields or farm
-                profitability.
-            </p>
+                <p>
+                    Use the results as a planning aid and verify
+                    important decisions using reliable local
+                    agricultural information and current market data.
+                </p>
 
-            <p>
-                Actual farm results can be affected by weather, soil
-                conditions, input prices, labour costs, pests, diseases,
-                market prices and many other factors.
-            </p>
-
-            <p>
-                Use current local information and your own farm records when
-                making financial or production decisions.
-            </p>
+            </div>
 
         </div>
-
     </section>
 
 </main>
 
 
 <footer>
-
     <div class="container">
 
-        <div class="footer-grid">
+        <p>
+            <strong>Kenya Farm Guide</strong>
+        </p>
 
-            <div>
+        <p>
+            An independent agriculture information platform by
+            Ibrahim Nyangino, providing practical farming information,
+            planning resources and digital tools.
+        </p>
 
-                <h3>Kenya Farm Guide</h3>
+        <p>
+            <a href="about.html">About</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="disclaimer.html">Disclaimer</a>
+        </p>
 
-                <p>
-                    An independent agriculture information platform by
-                    Ibrahim Nyangino, providing practical farming information,
-                    planning resources and digital tools.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <h3>Explore</h3>
-
-                <nav>
-                    <a href="index.html">Home</a>
-                    <a href="maize.html">Maize Farming</a>
-                    <a href="crops.html">Other Crops</a>
-                    <a href="farm-costs.html">Farm Costs</a>
-                    <a href="technology.html">Agricultural Technology</a>
-                </nav>
-
-            </div>
-
-
-            <div>
-
-                <h3>Information</h3>
-
-                <nav>
-                    <a href="about.html">About</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="disclaimer.html">Disclaimer</a>
-                </nav>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            <p>
-                &copy; 2026 Kenya Farm Guide. All rights reserved.
-            </p>
-
-            <p>
-                Created by Ibrahim Nyangino.
-            </p>
-
-        </div>
+        <p>
+            &copy; 2026 Kenya Farm Guide. All rights reserved.
+        </p>
 
     </div>
-
 </footer>
 
 
